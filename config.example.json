@@ -1,0 +1,21 @@
+{
+  "target": {
+    "model": "YOUR_TARGET_MODEL",
+    "base_url": "https://api.openai.com/v1",
+    "api_key_env": "TARGET_API_KEY",
+    "temperature": 0.0,
+    "timeout": 120,
+    "max_retries": 2,
+    "json_mode": false
+  },
+  "judge": {
+    "model": "YOUR_JUDGE_MODEL",
+    "base_url": "https://api.openai.com/v1",
+    "api_key_env": "JUDGE_API_KEY",
+    "temperature": 0.1,
+    "timeout": 120,
+    "max_retries": 2,
+    "json_mode": true
+  },
+  "max_clarification_turns": 5
+}

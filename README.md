@@ -9,9 +9,9 @@
 </p>
 
 <p align="center">
-  <a href="PAPER_URL">📄 Paper</a>
+  <a href="https://zhangrongyu0101.github.io/VagueBench/paper.pdf">📄 Paper</a>
   &nbsp; · &nbsp;
-  <a href="PROJECT_PAGE_URL">🌐 Project Page</a>
+  <a href="https://zhangrongyu0101.github.io/VagueBench/">🌐 Project Page</a>
   &nbsp; · &nbsp;
   <a href="https://huggingface.co/datasets/rongyu0101/VagueBench/tree/main">🤗 Hugging Face</a>
 </p>

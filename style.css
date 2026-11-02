@@ -6,3 +6,29 @@
 header{flex-wrap:wrap;gap:16px}
 #dialogue{min-height:120px}
 @media(max-width:760px){:root .intro{padding-top:25px}:root .intro h1{font-size:48px}:root .subtitle{font-size:18px}.intro .authors{line-height:1.6}}
+.board-head{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:end;margin-bottom:28px}
+.board-head h2{margin:12px 0 0}
+.board-head p{margin:0;color:var(--muted);font-size:15px;line-height:1.7}
+.board-toolbar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.board-tabs,.board-filters{display:flex;gap:8px;flex-wrap:wrap}
+.board-tabs button,.board-filters button{border:1px solid #bbc9bf;background:#fff;color:var(--muted);border-radius:5px;padding:8px 12px;font:700 12px Arial,Helvetica,sans-serif;cursor:pointer}
+.board-tabs button[aria-selected=true],.board-filters button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.board-scroll{overflow-x:auto;background:#fff;border:1px solid var(--line)}
+.board{width:100%;border-collapse:collapse;min-width:760px}
+.board th{text-align:left;font-size:12px;font-weight:700;color:var(--muted);padding:14px 16px;background:#f4f7f5;border-bottom:1px solid var(--line)}
+.board td{padding:16px;border-bottom:1px solid var(--line);vertical-align:middle;font-size:14px}
+.board tr:last-child td{border-bottom:0}
+.board tr.ours{background:#eaf3ec}
+.rank{display:inline-flex;width:32px;height:32px;align-items:center;justify-content:center;border:1px solid var(--line);background:#fff;font-size:12px;font-weight:700}
+.rank.top{background:#c39526;border-color:#c39526;color:#fff}
+.model{font-weight:800}
+.kind{color:var(--muted);font-size:13px}
+.metric{min-width:150px}
+.metric-top{font-weight:700;margin-bottom:7px}
+.bar{display:block;height:6px;background:#e6ece8}
+.bar>span{display:block;height:100%;background:#2f6f86}
+.ours .bar>span{background:var(--green)}
+.metric.warn .bar>span{background:var(--red)}
+.board-note{margin:14px 0 0;font-size:12px;line-height:1.6;color:#778079;max-width:860px}
+.empty{color:var(--muted);padding:28px 16px}
+@media(max-width:760px){.board-head{grid-template-columns:1fr;gap:14px}.board-head h2{font-size:34px}nav{gap:14px}}

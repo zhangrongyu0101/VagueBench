@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header><a class="wordmark" href="#">VagueBench<span> / DialogGRPO</span></a><nav aria-label="Main navigation"><a href="#research">Research</a><a href="#method">Method</a><a href="#paper">Paper</a></nav></header>
+  <header><a class="wordmark" href="#">VagueBench<span> / DialogGRPO</span></a><nav aria-label="Main navigation"><a href="#leaderboard">Leaderboard</a><a href="#research">Research</a><a href="#method">Method</a><a href="#paper">Paper</a></nav></header>
   <main>
     <section class="intro" aria-labelledby="title">
       <div class="eyebrow"><span></span> PROACTIVE ELICITATION IN LANGUAGE MODELS</div>
@@ -17,7 +17,8 @@
       <p class="authors">Rongyu Zhang*, Mutian Bao*, Jinjian Zhang*, Yuetian Du, He Xu, Wei Zhou,<br class="desktop"> Xiaojun Zhu, Ming Kong, Jie Liu, Linjian Mo, Qiang Zhu</p>
       <p class="affiliations">Zhejiang University <span>·</span> Ant Group <span>·</span> City University of Hong Kong</p>
       <div class="resources">
-        <a class="resource primary" href="paper.pdf" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a>
+        <a class="resource primary" href="#leaderboard">Leaderboard <span aria-hidden="true">↓</span></a>
+        <a class="resource" href="paper.pdf" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a>
         <a class="resource" href="https://github.com/zhangrongyu0101/VagueBench" target="_blank" rel="noopener"><img src="assets/github-mark.png" alt="">Code on GitHub <span aria-hidden="true">↗</span></a>
         <a class="resource" href="https://huggingface.co/datasets/rongyu0101/VagueBench" target="_blank" rel="noopener"><img src="assets/hf-logo.png" alt="">Dataset on Hugging Face <span aria-hidden="true">↗</span></a>
       </div>
@@ -30,6 +31,35 @@
         <div class="response guessing"><span class="label">GUESSING</span><h2>An answer built on assumptions.</h2><p>Jewelry? Short-term trading? Physical gold?<br>The model answers a question the user never asked.</p><span class="outcome">Missing intent. Missing constraints.</span></div>
         <div class="response asking"><span class="label">PROACTIVE ELICITATION</span><h2>A better question comes first.</h2><div id="dialogue" aria-live="polite"><p class="question">“Are you looking to invest, collect, or just research?”</p><p class="answer">“Invest, to hedge inflation.”</p></div><div class="turns" aria-label="Example dialogue turns"><button aria-pressed="true" data-turn="0">01 · Intent</button><button aria-pressed="false" data-turn="1">02 · Constraints</button><button aria-pressed="false" data-turn="2">03 · Preferences</button></div></div>
       </div>
+    </section>
+    <section id="leaderboard" class="section leaderboard" aria-labelledby="leaderboard-title">
+      <div class="board-head">
+        <div>
+          <span class="eyebrow"><span></span> LEADERBOARD</span>
+          <h2 id="leaderboard-title">Who asks,<br>and who guesses.</h2>
+        </div>
+        <p>Main results on VagueBench. Vague splits are ranked by Ask%. Complete queries are ranked by coverage F1.</p>
+      </div>
+      <div class="board-toolbar">
+        <div class="board-tabs" role="tablist" aria-label="Evaluation split">
+          <button type="button" role="tab" id="tab-intent" aria-selected="true" data-split="intent">Intent-Vague</button>
+          <button type="button" role="tab" id="tab-fully" aria-selected="false" data-split="fully">Fully-Vague</button>
+          <button type="button" role="tab" id="tab-complete" aria-selected="false" data-split="complete">Complete</button>
+        </div>
+        <div class="board-filters" role="group" aria-label="Model group">
+          <button type="button" aria-pressed="true" data-group="all">All</button>
+          <button type="button" aria-pressed="false" data-group="closed">Closed-source</button>
+          <button type="button" aria-pressed="false" data-group="open">Open-source</button>
+          <button type="button" aria-pressed="false" data-group="method">Methods</button>
+        </div>
+      </div>
+      <div class="board-scroll">
+        <table class="board">
+          <thead id="board-head"></thead>
+          <tbody id="board-body"></tbody>
+        </table>
+      </div>
+      <p class="board-note" id="board-note"></p>
     </section>
     <section id="research" class="section">
       <div class="section-heading"><span class="eyebrow">01 / THE RESEARCH</span><h2>Knowing when to ask<br>is part of knowing how to help.</h2></div>

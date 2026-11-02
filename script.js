@@ -45,7 +45,6 @@ const models = [
   { name: 'Qwen3.5-27B', group: 'open', kind: 'Open-source', intent: { ask: 1.6, cov: 0.49, iar: 0.08 }, fully: { ask: 2.0, cov: 0.38, iar: 0.37 }, complete: { ask: 1.6, cov: 0.58 } },
   { name: 'GPT-oss-120B', group: 'open', kind: 'Open-source', intent: { ask: 2.0, cov: 0.46, iar: 0.02 }, fully: { ask: 3.6, cov: 0.36, iar: 0.35 } },
   { name: 'Qwen3.5-27B + Prompt', group: 'method', kind: 'Method', intent: { ask: 38.4, cov: 0.52, iar: 0.22 }, fully: { ask: 47.2, cov: 0.50, iar: 0.38 }, complete: { ask: 42.8, cov: 0.59 } },
-  { name: 'Qwen3.5-27B + UoT', group: 'method', kind: 'Method', intent: { ask: 58.8, cov: 0.50, iar: 0.45 }, fully: { ask: 62.4, cov: 0.49, iar: 0.41 }, complete: { ask: 56.4, cov: 0.48 } },
   { name: 'Qwen3.5-27B + SFT', group: 'method', kind: 'Method', intent: { ask: 82.0, cov: 0.60, iar: 0.64 }, fully: { ask: 85.6, cov: 0.63, iar: 0.80 }, complete: { ask: 6.4, cov: 0.71 } },
   { name: 'Qwen3.5-27B + DialogGRPO', group: 'method', kind: 'Method', ours: true, intent: { ask: 88.4, cov: 0.64, iar: 0.76 }, fully: { ask: 91.2, cov: 0.67, iar: 0.87 }, complete: { ask: 5.2, cov: 0.74 } }
 ];

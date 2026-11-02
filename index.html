@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Don't Guess, Ask Wisely: VagueBench and DialogGRPO for proactive elicitation in open-domain LLM conversations.">
+  <title>Don't Guess, Ask Wisely · VagueBench</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><a class="wordmark" href="#">VagueBench<span> / DialogGRPO</span></a><nav aria-label="Main navigation"><a href="#research">Research</a><a href="#method">Method</a><a href="#paper">Paper</a></nav></header>
+  <main>
+    <section class="intro" aria-labelledby="title">
+      <div class="eyebrow"><span></span> PROACTIVE ELICITATION IN LANGUAGE MODELS</div>
+      <h1 id="title">Don't Guess,<br><em>Ask Wisely.</em></h1>
+      <p class="subtitle">Benchmarking and Training Proactive Elicitation<br class="desktop"> in Open-Domain LLM Conversations</p>
+      <p class="authors">Rongyu Zhang*, Mutian Bao*, Jinjian Zhang*, Yuetian Du, He Xu, Wei Zhou,<br class="desktop"> Xiaojun Zhu, Ming Kong, Jie Liu, Linjian Mo, Qiang Zhu</p>
+      <p class="affiliations">Zhejiang University <span>·</span> Ant Group <span>·</span> City University of Hong Kong</p>
+      <div class="resources">
+        <a class="resource primary" href="paper.pdf" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a>
+        <a class="resource" href="https://github.com/zhangrongyu0101/VagueBench" target="_blank" rel="noopener"><img src="assets/github-mark.png" alt="">Code on GitHub <span aria-hidden="true">↗</span></a>
+        <a class="resource" href="https://huggingface.co/datasets/rongyu0101/VagueBench" target="_blank" rel="noopener"><img src="assets/hf-logo.png" alt="">Dataset on Hugging Face <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="contribution">* Equal contribution</p>
+    </section>
+    <section class="conversation" aria-label="Illustrative example of proactive elicitation">
+      <div class="conversation-heading"><span>ONE QUERY. TWO APPROACHES.</span><span class="example-label">Illustrative example</span></div>
+      <div class="query"><span class="speaker">USER</span><p>“I'm considering gold and silver.”</p></div>
+      <div class="responses">
+        <div class="response guessing"><span class="label">GUESSING</span><h2>An answer built on assumptions.</h2><p>Jewelry? Short-term trading? Physical gold?<br>The model answers a question the user never asked.</p><span class="outcome">Missing intent. Missing constraints.</span></div>
+        <div class="response asking"><span class="label">PROACTIVE ELICITATION</span><h2>A better question comes first.</h2><div id="dialogue" aria-live="polite"><p class="question">“Are you looking to invest, collect, or just research?”</p><p class="answer">“Invest, to hedge inflation.”</p></div><div class="turns" aria-label="Example dialogue turns"><button aria-pressed="true" data-turn="0">01 · Intent</button><button aria-pressed="false" data-turn="1">02 · Constraints</button><button aria-pressed="false" data-turn="2">03 · Preferences</button></div></div>
+      </div>
+    </section>
+    <section id="research" class="section">
+      <div class="section-heading"><span class="eyebrow">01 / THE RESEARCH</span><h2>Knowing when to ask<br>is part of knowing how to help.</h2></div>
+      <div class="stats"><div><strong>&lt;11<span>%</span></strong><p>of underspecified queries trigger a follow-up question in the evaluated baseline LLMs.</p></div><div><strong>&gt;88<span>%</span></strong><p>of vague queries elicit missing information with DialogGRPO.</p></div><div><strong>7 <span>LLMs</span></strong><p>evaluated, from 8B models to frontier systems.</p></div></div>
+      <p class="note">Results reported in the paper. See the experimental settings and tables for model-specific comparisons.</p>
+      <div class="abstract"><h3>Abstract</h3><p>When user queries are incomplete, large language models should ask targeted questions before committing to an answer. We introduce <b>VagueBench</b>, an open-domain benchmark with controlled vagueness and known hidden information, to evaluate both when and what to ask. We propose <b>DialogGRPO</b>, an offline reinforcement learning method that organizes multi-turn elicitation as a dialogue-state directed acyclic graph. Dense turn-level rewards combine immediate information gain with lookahead value, enabling fine-grained credit assignment without runtime simulation. The method improves information recovery and answer coverage without over-asking on complete queries, and transfers zero-shot to MultiWOZ 2.4 and AmbigQA.</p></div>
+    </section>
+    <section id="method" class="section method">
+      <div class="section-heading"><span class="eyebrow">02 / BENCHMARK & METHOD</span><h2>From missing context<br>to targeted questions.</h2></div>
+      <div class="steps"><article><span class="step">01</span><h3>Make the gap measurable.</h3><p>Annotate real open-domain seed queries with structured intent and detail units. Remove linguistic cues to create intent-vague and fully-vague variants.</p><span class="tag">VagueBench</span></article><article><span class="step">02</span><h3>Compare questions locally.</h3><p>Organize multi-turn dialogues as a state DAG. Compare candidate questions at each node using group-relative advantage estimation.</p><span class="tag">DialogGRPO</span></article><article><span class="step">03</span><h3>Reward useful elicitation.</h3><p>Combine immediate information gain with lookahead value. Learn to recover missing information efficiently before giving an answer.</p><span class="tag">Dense turn-level rewards</span></article></div>
+      <figure class="method-figure"><img src="assets/method.png" alt="DialogGRPO framework diagram from the paper showing dialogue-state construction and training." loading="lazy"><figcaption>DialogGRPO framework. Figure reproduced from the paper.</figcaption></figure>
+    </section>
+    <section id="paper" class="section paper-section">
+      <div><span class="eyebrow">03 / EXPLORE THE WORK</span><h2>The paper,<br>code, and data.</h2><p>Read the full methodology, evaluation, ablations, and supplementary material.</p><div class="paper-links"><a href="paper.pdf" target="_blank" rel="noopener">Paper PDF <span>↗</span></a><a href="https://github.com/zhangrongyu0101/VagueBench" target="_blank" rel="noopener">GitHub repository <span>↗</span></a><a href="https://huggingface.co/datasets/rongyu0101/VagueBench" target="_blank" rel="noopener">Hugging Face dataset <span>↗</span></a></div></div>
+      <a class="paper-preview" href="paper.pdf" target="_blank" rel="noopener" aria-label="Open the paper PDF"><img src="assets/paper-cover.png" alt="First page of Don't Guess, Ask Wisely, including authors, abstract, and motivation figure." loading="lazy"></a>
+    </section>
+  </main>
+  <footer><span>VagueBench / DialogGRPO</span><span>Don't Guess, Ask Wisely.</span><a href="#">Back to top ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
